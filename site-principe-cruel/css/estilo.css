@@ -7,6 +7,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #1A1A1A;
 }
 
 nav {
@@ -51,7 +52,7 @@ nav a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: black;
+    color: #E0CE79;
     font-size: 90px;
     font-family: 'Cinzel Decorative';
     text-align: center;
@@ -133,4 +134,132 @@ width: 100%;
     text-align: center;
     z-index: 100;
     width:1800px;
+}
+
+/* GRID — 3 CARDS EM CADA LINHA */
+.cards-personagens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* CARD BASE */
+.card-personagem {
+  width: 100%;
+  height: 300px;   /* ← aqui é o principal */
+  background-color: #222;
+  border-radius: 10px;
+  padding: 25px 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGEM (+ POSICIONAMENTO ESTILO FIGMA) */
+.card-img {
+  position: absolute;
+  right: 10px;   /* controla posição horizontal */
+  top: -63px;     /* controla posição vertical */
+  width: 900px;   /* controle do tamanho da imagem */
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ÁREA DO TEXTO */
+/* CONTEÚDO – aumenta a área disponível */
+.conteudo {
+  z-index: 2;
+  max-width: 380px;
+  margin-left: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* TÍTULO */
+.titulo {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 40px;
+  line-height: 1; /* evita quebrar feio */
+  color: #E0CE79;
+  margin-bottom: 12px;
+}
+
+/* TEXTO */
+.texto {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* ====== CORES DE FUNDO ====== */
+.jude {
+  background-color: #2d2d2d;
+}
+
+.cardan {
+  background-color: #3b1f1f;
+}
+
+.madoc {
+  background-color: #4A282F;
+}
+
+.oak {
+  background-color: #C3906A;
+}
+.balekin{
+background-color: #3C4249;
+}
+
+.dain{
+  background-color: #493E33;
+}
+
+.vivi{
+background-color: #3B473A;
+}
+
+.Locke{
+background-color: #82472D;
+}
+
+.Nicassia{
+background-color: #7D9298;
+}
+
+.Barata{
+background-color: #818155;
+}
+
+.Fantasma{
+background-color: #2C2A32;
+}
+
+.Valerian{
+background-color: #432726;
+}
+
+.Bomba{
+background-color: #6B4A3C;
+}
+
+.taryn{
+  background-color: #5F3725;
+}
+
+.Oriana{
+  background-color: #b9a4a5;
+}
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 14px;
 }
