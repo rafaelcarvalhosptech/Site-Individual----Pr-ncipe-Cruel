@@ -52,8 +52,8 @@ nav a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #E0CE79;
-    font-size: 90px;
+    color: black;
+    font-size: 110px;
     font-family: 'Cinzel Decorative';
     text-align: center;
 }
@@ -81,7 +81,7 @@ width: 100%;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* 60% opacidade */
+  background-color: rgba(0, 0, 0, 0.8); 
   z-index: 100; 
 }
 
@@ -136,19 +136,19 @@ width: 100%;
     width:1800px;
 }
 
-/* GRID — 3 CARDS EM CADA LINHA */
 .cards-personagens {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   width: 90%;
   margin: 0 auto;
+   padding-bottom: 100px;
 }
 
 /* CARD BASE */
 .card-personagem {
   width: 100%;
-  height: 300px;   /* ← aqui é o principal */
+  height: 300px;   
   background-color: #222;
   border-radius: 10px;
   padding: 25px 25px;
@@ -156,19 +156,46 @@ width: 100%;
   overflow: hidden;
 }
 
-/* IMAGEM (+ POSICIONAMENTO ESTILO FIGMA) */
+.cardan .card-img {
+    width: 750px;   /* antes era 900px — ajuste ideal */
+    top: 10px;     /* corrige a posição vertical */
+    right: -100px;   /* puxa um pouco pro lado pra caber */
+}
+
+.vivi .card-img {
+    width: 750px;   /* antes era 900px — ajuste ideal */
+    top: -20px;     /* corrige a posição vertical */
+    right: 150px;   /* puxa um pouco pro lado pra caber */
+}
+
+.vivi .card-img {
+    width: 750px;   /* antes era 900px — ajuste ideal */
+    top: -20px;     /* corrige a posição vertical */
+    right: 150px;   /* puxa um pouco pro lado pra caber */
+}
+
+.vivi .card-img {
+    width: 750px;   /* antes era 900px — ajuste ideal */
+    top: -20px;     /* corrige a posição vertical */
+    right: 150px;   /* puxa um pouco pro lado pra caber */
+}
+
+.taryn .card-img {
+    width: 800px;   /* antes era 900px — ajuste ideal */
+    top: -65px;     /* corrige a posição vertical */
+    right: 120px;   /* puxa um pouco pro lado pra caber */
+}
+
 .card-img {
   position: absolute;
-  right: 10px;   /* controla posição horizontal */
-  top: -63px;     /* controla posição vertical */
-  width: 900px;   /* controle do tamanho da imagem */
+  right: 10px;  
+  top: -63px;    
+  width: 900px;   
   height: auto;
   object-fit: contain;
   pointer-events: none;
 }
 
-/* ÁREA DO TEXTO */
-/* CONTEÚDO – aumenta a área disponível */
 .conteudo {
   z-index: 2;
   max-width: 380px;
@@ -178,24 +205,37 @@ width: 100%;
   justify-content: center;
 }
 
+.titulo-personagens{
+  color: #E0CE79;
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  font-family: "Cinzel Decorative", serif;
+}
 
-/* TÍTULO */
+.subtitulo-personagens{
+font-family: "Cinzel";
+display: flex;
+justify-content: center;
+font-size: 40px;
+color: white;
+}
+
 .titulo {
   font-family: "Cinzel Decorative", serif;
   font-size: 40px;
-  line-height: 1; /* evita quebrar feio */
+  line-height: 1; 
   color: #E0CE79;
   margin-bottom: 12px;
 }
 
-/* TEXTO */
+
 .texto {
   color: #ddd;
   font-size: 14px;
   line-height: 1.4;
 }
 
-/* ====== CORES DE FUNDO ====== */
 .jude {
   background-color: #2d2d2d;
 }
@@ -255,11 +295,84 @@ background-color: #6B4A3C;
   background-color: #b9a4a5;
 }
 
-footer {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
-    font-size: 14px;
+.banner-compra {
+    position: relative;
+    width: 100%;
+    height: 900px;  
+    overflow: hidden;
+}
+
+/* Fundo */
+.banner-compra .fundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Imagem dos 3 livros */
+.banner-compra .livros {
+    position: absolute;
+    height: 1700px;
+    width: 2700px;        /* AUMENTE AQUI sem afetar o texto */
+    left: -600px;         /* ajuste horizontal */
+    top: -200px;          /* ajuste vertical */
+    z-index: 101;
+}
+
+/* Bloco fixo do texto */
+.banner-compra .info {
+    position: absolute;
+    right: 220px;        /* posição EXATA igual sua foto */
+    top: 160px;
+    z-index: 120;
+    text-align: left;
+}
+
+/* Nome da autora */
+.nome-autora {
+    font-family: "Island Moments", cursive;
+    font-size: 60px;
+    margin-bottom: -10px;
+    z-index: 150;
+    color: white;
+}
+
+/* Nome do livro */
+.nome-livro {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 70px;
+    margin-bottom: 30px;
+    z-index: 120;
+    color: white;
+    font-weight: 100;
+}
+
+/* Botão */
+.botao-comprar {
+    background: white;
+    color: black;
+    padding: 15px 35px;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.botao-comprar:hover {
+    background: #333;
+}
+
+.quadro-preto2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  z-index: 100; 
 }
