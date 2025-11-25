@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>Príncipe Cruel | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -17,22 +17,18 @@
 
 <body onload="listar()">
   <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">Principe Cruel</h1>
-      <ul class="navbar">
+  <div class="header2">
+    <div class="container2">
+      <h1 class="titulo2">Principe Cruel</h1>
+      <ul class="navbar2">
         <li>
-          <a href="index.html">Inicial</a>
+          <a href="index.html">Início</a>
         </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
         <li>
           <a href="login.html">Login</a>
         </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
+        <li class="agora2">
+          <a href="cadastro.html">Cadastro</a>
         </li>
       </ul>
     </div>
@@ -49,10 +45,6 @@
       <div class="card card-cadastro">
         <h2>Bem-vindo!</h2>
         <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
           <div class="campo">
             <span>Código de ativação:</span>
             <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
@@ -85,10 +77,18 @@
   </div>
 
   <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
+ <div class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>Príncipe Cruel</h2>
+        <p>Imersão do livro Príncipe Cruel</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html">Login</a>
+      </div>
     </div>
   </div>
   <!--footer fim-->
@@ -102,10 +102,6 @@
   let listaEmpresasCadastradas = [];
 
   function cadastrar() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
@@ -113,7 +109,6 @@
     var codigoVar = codigo_input.value;
     var idEmpresaVincular
 
-    // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
@@ -131,7 +126,6 @@
       setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
     for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
       if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
         idEmpresaVincular = listaEmpresasCadastradas[i].id
@@ -144,15 +138,12 @@
       }
     }
 
-    // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
@@ -186,7 +177,6 @@
     return false;
   }
 
-  // Listando empresas cadastradas 
   function listar() {
     fetch("/empresas/listar", {
       method: "GET",

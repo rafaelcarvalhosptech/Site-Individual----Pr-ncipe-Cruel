@@ -10,6 +10,59 @@ body {
   background-color: #1A1A1A;
 }
 
+
+
+
+/* nav2 */
+
+
+
+.header2 {
+  background-color: #222;
+  padding: 15px 0;
+}
+
+.header2 .container2 {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo2 {
+  color: white;
+  font-family: 'Cinzel Decorative';
+  margin: 0;
+}
+
+.navbar2 {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar2 li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Cinzel Decorative';
+  font-size: 16px;
+}
+
+.navbar2 li a:hover {
+  text-decoration: underline;
+}
+
+
+.navbar2 .agora2 a {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration: none;
+}
+
+
 nav {
   position: absolute;
   top: 0;
@@ -428,6 +481,124 @@ background-color: #6B4A3C;
   background-color: rgba(0, 0, 0, 0.8); 
   z-index: 100; 
 }
+/* meu site pra cima */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222;
+
+}
+
+:root {
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-footer: 65px;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  height: var(--tamanho-header);
+  
+}
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header a {
+  text-decoration: none;
+  color: #e3b062;
+}
+
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #e3b062;
+}
+
+
+.header h1 {
+  margin: 0;
+}
+
+/* BANNER */
+.banner {
+  height: var(--tamanho-banner);
+  color: white;
+  background-image: url('../assets/imgs/imgs/fundo-cadastro.png');
+  background-size: cover;
+}
+
+
+.banner .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.banner .container p {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+}
+
+.banner .container span {
+  font-weight: 800;
+}
+
+/* MISSÃO VISÃO VALORES */
+
+.social {
+  background-color: #e5e5e5;
+  display: flex;
+}
+
+.social .container {
+  justify-content: center;
+}
+
+.box img {
+  width: 170px;
+}
+
+.social .container .boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.social p {
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* FOOTER */
 
@@ -451,28 +622,40 @@ background-color: #6B4A3C;
 /* LOGIN */
 
 .login {
-  height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  min-height: calc(100vh - var(--tamanho-header) - var(--tamanho-footer));
+  width: 100%;
+  background-image: url('../assets/imgs/imgs/Cadastro1.png');
   background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
 }
 
-.login .container {
+/* Corrige o container que estava quebrando */
+.login .container,
+.login .login-content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-color: #222;;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: #F0E68C;
   flex-direction: column;
-  height: fit-content;
+  height: fit-content;  
   padding: 20px 0;
+  font-family: 'Cinzel Decorative';
+  
 }
 
 .card h2 {
@@ -494,7 +677,7 @@ background-color: #6B4A3C;
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 2px solid #94750f;
   text-align: center;
   border-radius: 10px;
   margin: 0;
@@ -524,12 +707,17 @@ background-color: #6B4A3C;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
-  color: #fff;
-  background-color: #ED145B;
+  color: black;
+  background-color: #F0E68C;
   width: 120px;
   height: 30px;
   align-self: center;
   margin-top: 20px;
+  transition-duration: 0.5s;
+}
+
+.botao:hover {
+  background-color: #6b5804;
 }
 
 .loading-div {
@@ -671,3 +859,45 @@ input {
   75%  {transform: rotate(-25deg)}
   100% {transform: rotate(25deg)}
 }
+
+.footer {
+  background-color: #222;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: 'Cinzel Decorative';
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #c6d8e6;
+  margin-top: 8px;
+}
+
+.footer-links {
+  margin: 25px 0;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #c6d8e6;
+}
+
