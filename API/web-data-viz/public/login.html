@@ -92,69 +92,63 @@
 
 
     function entrar() {
-        aguardar();
+    aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+    const emailVar = email_input.value;
+    const senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+    if (!emailVar || !senhaVar) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Preencha todos os campos!";
+        finalizarAguardar();
+        return;
+    }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+    console.log("LOGIN:", emailVar, senhaVar);
 
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    })
+        .then(resposta => {
+            console.log("RESPOSTA DO SERVIDOR:", resposta);
 
             if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
+                return resposta.json();
             } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
+                return resposta.text().then(texto => {
+                    throw new Error(texto);
                 });
             }
-
-        }).catch(function (erro) {
-            console.log(erro);
         })
+        .then(json => {
+            console.log("DADOS RECEBIDOS:", json);
 
-        return false;
-    }
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.id;
+
+            if (json.aquarios) {
+                sessionStorage.AQUARIOS = JSON.stringify(json.aquarios);
+            }
+
+            setTimeout(() => {
+                window.location = "./dashboard/cards.html";
+            }, 1000);
+        })
+        .catch(erro => {
+            console.error("ERRO NO LOGIN:", erro);
+            finalizarAguardar(erro.message);
+        });
+
+    return false;
+}
 
     function sumirMensagem() {
         cardErro.style.display = "none"
