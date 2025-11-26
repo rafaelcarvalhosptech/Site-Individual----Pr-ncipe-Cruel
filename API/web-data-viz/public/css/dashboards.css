@@ -5,7 +5,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Cinzel Decorative", serif;
+
 }
 
 .label-captura {
@@ -13,10 +14,12 @@ body {
   justify-content: center;
 }
 
+
 .dash-right .avisos {
   width: 100%;
   color: rgb(216, 216, 216);
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Cinzel Decorative", serif;
+
 }
 
 .dash-right .avisos .container {
@@ -51,7 +54,7 @@ body {
 
 .dash-right .avisos .div-form button {
   cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Cinzel Decorative", serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
@@ -64,7 +67,7 @@ body {
 
 .publicacao-btn-editar {
   cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Cinzel Decorative", serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
@@ -120,19 +123,21 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #E0CE79;
+
   height: 100vh;
   overflow: auto;
 }
 
 .area-parametros-alerta {
-  /* border: 2px solid pink; */
+  
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: auto;
-  margin-top: 10px;
-  background-color: #212124;
+  margin-top: 30px;
+  background-color: black;
+  border-radius: 20px;
 }
 
 .area-parametros-alerta .titulo-legenda {
@@ -162,28 +167,32 @@ body {
   font-weight: 500;
 }
 
+.parametros-alerta p {
+  color: #fff;
+}
+
 .item-regua p:nth-child(2) {
   font-weight: 800;
 }
 
 .perigo-frio {
-  background-color: #5c6bc0;
+  background-color: #161618;
 }
 
 .perigo-quente {
-  background-color: #ff7043;
+  background-color: #161618;
 }
 
 .alerta-frio {
-  background-color: #42a5f5;
+  background-color: #161618;
 }
 
 .alerta-quente {
-  background-color: #ffee58;
+  background-color: #161618;
 }
 
 .ideal {
-  background-color: #9ccc65;
+  background-color: #161618;
 }
 
 .cards {
@@ -259,14 +268,7 @@ body {
   display: inline-block;
 }
 
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  padding: 0 30% 0 30%;
-}
+
 
 .graph {
   width: 70%;
@@ -281,7 +283,7 @@ body {
 }
 
 .btn-chart {
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Cinzel Decorative", serif;
   border: 0;
   font-weight: 600;
   font-size: 18px;
@@ -330,6 +332,7 @@ canvas {
 .janela {
   display: flex;
   /* width: 100vw; */
+
 }
 
 .header-left a {
@@ -337,6 +340,10 @@ canvas {
   color: white;
 }
 
+.header-left .fundoHeader{
+  width: 800px;
+  height: 400px;
+}
 .header-left {
   position: fixed;
   top: 0;
@@ -348,7 +355,6 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
   background-color: #212124;
 }
 
@@ -364,8 +370,11 @@ canvas {
   overflow: auto;
 }
 
-.header-left h1 {
-  color: #32b9cd;
+.header-left img {
+  height: 50px;
+  width: 70px;
+  margin-bottom: 5px;
+
 }
 
 .hello {
@@ -375,7 +384,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: white;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -394,35 +403,116 @@ canvas {
 }
 
 .btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background-color: black;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
-  margin: 0;
+  color: white;
+  margin-top: 20px;
+
 }
 
 .btn-nav h3,
 .btn-logout h3 {
-  margin: 0;
-  padding: 0;
+
+  padding: 14px;
+  align-self: center;
+  margin-left: 9px;
 }
 
 .btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
   cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  background-color: black;
+  width: 90px;
+  height: 60px;
+
+}
+
+/* Grafico 1  */
+.legenda-grafico{
+    display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: black;
+  border-radius: 10px;
+  margin-left: 100px;
+}
+.legenda-grafico h1{
+  margin-top: 30px;
+  color: white;
+  padding: 10px;
+  align-self: center;
+ margin-bottom: 5px;
+} 
+#grafico_time {
+  background-color: #161618;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  
+
+
+
+}
+
+.btns-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  height: 500px;
+  margin-right: 90px;
+
+}
+
+/* KPI´S */
+
+
+.kpi{
+  display: flex;
+  margin-top: 20px;
+  gap: 50px;
+}
+.kpi-container {
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+
+}
+
+.kpi-card {
+  background-color: #161618;
+  padding: 20px;
+  border-radius: 15px;
+  width: 180px;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(5px);
+
+}
+
+.kpi-value {
+  font-size: 32px;
+  font-weight: bold;
 }
