@@ -12,7 +12,7 @@ USE principeCruel;
 
 CREATE TABLE personagens (
     idPersonagens INT AUTO_INCREMENT PRIMARY KEY,
-    nomeTime VARCHAR(40),
+    nomePersonagem VARCHAR(40),
     descricao VARCHAR(50)
 );
 
@@ -22,6 +22,7 @@ CREATE TABLE usuario (
     nome VARCHAR(50),
     email VARCHAR(100),
     senha VARCHAR(50),
+    Rankfã INT,
     personagens_idPersonagens INT,
     CONSTRAINT fk_usuario_personagem
         FOREIGN KEY (personagens_idPersonagens)
@@ -32,9 +33,11 @@ CREATE TABLE usuario (
 CREATE TABLE personagensFav (
     idFav INT AUTO_INCREMENT PRIMARY KEY,
     personagemOdiado VARCHAR(50),
-    personagemAmado DATE,
+    personagemAmado VARCHAR(45),
     personagens_idPersonagens INT,
     CONSTRAINT fk_fav_personagem
         FOREIGN KEY (personagens_idPersonagens)
         REFERENCES personagens(idPersonagens)
 );
+
+select * from usuario;

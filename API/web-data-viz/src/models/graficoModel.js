@@ -1,17 +1,9 @@
 var database = require("../database/config");
 
 // Gráficos
-function buscarTimes() {
+function buscardados() {
     var instrucaoSql = `
-        SELECT 
-            COUNT(u.id) AS QuantidadeTotal,
-            t.nomeTime AS Time,
-            t.idTime AS idTime
-        FROM timeFut t
-        LEFT JOIN usuario u
-            ON u.fkTime = t.idTime
-        GROUP BY t.idTime, t.nomeTime
-        ORDER BY t.idTime;
+       
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -45,7 +37,7 @@ function buscarNivelTorcedor(id) {
 }
 
 module.exports = {
-    buscarTimes,
+    buscarDados,
     buscarNivelTorcedor,
     buscarDadosNivelTorcedor
 };

@@ -4,8 +4,8 @@ var router = express.Router();
 var graficosController = require("../controllers/graficoController");
 
 // Gráficos
-router.get("/dadosTimes", function (req, res) {
-    graficosController.buscarTimes(req, res);
+router.get("/dadosdados", function (req, res) {
+    graficosController.buscardados(req, res);
 });
 
 

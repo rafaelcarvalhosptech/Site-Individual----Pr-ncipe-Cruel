@@ -1,8 +1,8 @@
 var graficosModel = require("../models/graficoModel");
 
 
-function buscarTimes(req, res) {
-    graficosModel.buscarTimes().then(function (resultado) {
+function buscarDados(req, res) {
+    graficosModel.buscarDados().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -15,7 +15,7 @@ function buscarTimes(req, res) {
     });
 }
 
-function buscarDadosNivelTorcedor(req, res) {
+function buscarDadosrankFã(req, res) {
     var id = req.params.id;
     console.log('Recuperando medidas em tempo real');
     graficosModel.buscarDadosNivelTorcedor(id).then(function (resultado) {
@@ -49,7 +49,7 @@ function buscarNivelTorcedor(req, res) {
 }
 
 module.exports = {
-    buscarTimes,
+    buscarDados,
     buscarNivelTorcedor,
     buscarDadosNivelTorcedor
 }

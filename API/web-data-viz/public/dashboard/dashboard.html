@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <link rel="shortcut icon" href="css/imagens//FIFA-Logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="" type="image/x-icon">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,7 +93,7 @@
 
       
         <div class="btns-dash" id="btnTorcedor">
-          <canvas id="grafico_time"></canvas>
+          <canvas id="grafico_Dado"></canvas>
         </div>
 
         <div id="graficos"></div>
@@ -121,7 +121,7 @@
   // Grafico
 
   function obterDadosGrafico() {
-    fetch(`/graficos/dadosTimes`, { cache: 'no-store' })
+    fetch(`/graficos/dadosDados`, { cache: 'no-store' })
       .then(function (resposta) {
         if (resposta.ok) {
           resposta.json().then(function (resposta) {
@@ -140,36 +140,36 @@
 
 
   function plotarGrafico(resposta) {
-    const nomesTimes = [];
-    const valoresTimes = [];
+    const nomesDados = [];
+    const valoresDados = [];
 
     for (let i = 0; i < resposta.length; i++) {
       let registro = resposta[i];
 
 
-      const nome = registro.Time ?? registro.Times ?? registro.nomeTime ?? registro.team ?? (`Time ${registro.idTime ?? i + 1}`);
+      const nome = registro.Dado ?? registro.Dados ?? registro.nomeDado ?? registro.team ?? (`Dado ${registro.idDado ?? i + 1}`);
 
 
       const valorBruto = registro.QuantidadeTotal ?? registro.quantidade ?? registro.valor ?? 0;
       const valor = Number.isFinite(Number(valorBruto)) ? Math.round(Number(valorBruto)) : 0;
 
-      nomesTimes.push(String(nome));
-      valoresTimes.push(valor);
+      nomesDados.push(String(nome));
+      valoresDados.push(valor);
     }
 
-    if (nomesTimes.length === 0) {
+    if (nomesDados.length === 0) {
       document.getElementById('graficos').innerHTML = "<p style='color:#fff'>Nenhum dado de torcedores disponível.</p>";
       return;
     }
 
-    const maxVal = Math.max(...valoresTimes, 1);
+    const maxVal = Math.max(...valoresDados, 1);
     const passo = Math.max(1, Math.ceil(maxVal / 5));
 
     const dados = {
-      labels: nomesTimes,
+      labels: nomesDados,
       datasets: [{
-        label: 'Quantidade de torcedores por time',
-        data: valoresTimes,
+        label: 'Quantidade de torcedores por Dado',
+        data: valoresDados,
         borderColor: '#bdff7b',
         borderWidth: 1
       }]
@@ -182,14 +182,14 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          x: { ticks: { autoSkip: false, color: '#ffffff' }, title: { display: true, text: 'Times', color: '#ffffff' } },
+          x: { ticks: { autoSkip: false, color: '#ffffff' }, title: { display: true, text: 'Dados', color: '#ffffff' } },
           y: { beginAtZero: true, max: Math.ceil(maxVal / passo) * passo, ticks: { stepSize: passo, color: '#ffffff' }, title: { display: true, text: 'Quantidade de usuários', color: '#ffffff' } }
         },
         plugins: { legend: { display: false } }
       }
     };
 
-    const canvas = document.getElementById('grafico_time');
+    const canvas = document.getElementById('grafico_Dado');
     if (!canvas) return;
 
     if (canvas._graficoInstancia) {

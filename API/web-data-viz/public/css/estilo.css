@@ -13,9 +13,6 @@ body {
 
 
 
-/* nav2 */
-
-
 
 .header2 {
   background-color: #222;
@@ -407,7 +404,7 @@ background-color: #6B4A3C;
     overflow: hidden;
 }
 
-/* Fundo */
+
 .banner-compra .fundo {
     width: 100%;
     height: 100%;
@@ -418,20 +415,20 @@ background-color: #6B4A3C;
     z-index: 0;
 }
 
-/* Imagem dos 3 livros */
+
 .banner-compra .livros {
     position: absolute;
     height: 1700px;
-    width: 2700px;        /* AUMENTE AQUI sem afetar o texto */
-    left: -600px;         /* ajuste horizontal */
-    top: -200px;          /* ajuste vertical */
+    width: 2700px;        
+    left: -600px;     
+    top: -200px;          
     z-index: 101;
 }
 
-/* Bloco fixo do texto */
+
 .banner-compra .info {
     position: absolute;
-    right: 220px;        /* posição EXATA igual sua foto */
+    right: 220px;       
     top: 160px;
     z-index: 120;
     text-align: left;
@@ -568,7 +565,7 @@ body {
   font-weight: 800;
 }
 
-/* MISSÃO VISÃO VALORES */
+
 
 .social {
   background-color: #e5e5e5;
@@ -600,7 +597,7 @@ body {
   align-items: center;
 }
 
-/* FOOTER */
+
 
 .footer {
   background-color: #32b9cd;
@@ -619,7 +616,6 @@ body {
   font-size: 12px;
 }
 
-/* LOGIN */
 
 .login {
   min-height: calc(100vh - var(--tamanho-header) - var(--tamanho-footer));
@@ -633,7 +629,7 @@ body {
   padding: 30px 0;
 }
 
-/* Corrige o container que estava quebrando */
+
 .login .container,
 .login .login-content {
   width: 100%;
@@ -734,7 +730,7 @@ body {
   display: none
 }
 
-/* FORMULARIO */
+
 
 .alerta_erro{
   display: flex;
@@ -801,7 +797,7 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
+
 
 .simulador {
   color: white;
@@ -813,7 +809,7 @@ input {
   height: var(--tamanho-simulador);
 }
 
-/* ALERTA */
+
 
 #alerta {
   position: absolute;
